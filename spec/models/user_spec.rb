@@ -36,4 +36,23 @@ describe User do
     its(:remember_token) { should_not be_blank }
   end
   
+  describe "entry associations" do
+
+    before { @user.save }
+    let!(:older_entry) do
+      FactoryGirl.create(:entry, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_entry) do
+      FactoryGirl.create(:entry, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should destroy associated entrys" do
+      entries = @user.entries.to_a
+      @user.destroy
+      expect(entries).not_to be_empty
+      entries.each do |entry|
+        expect(Entry.where(id: entry.id)).to be_empty
+      end
+    end
+  end
 end

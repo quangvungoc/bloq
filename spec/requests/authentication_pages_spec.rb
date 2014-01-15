@@ -18,6 +18,9 @@ describe "Authentication Pages" do
 
       it {should have_title("Sign in")}
       it {should have_selector("div.alert.alert-error")}
+
+      # TODO
+      it {should have_link("New entry")}
     end
 
     describe "with valid infos" do
@@ -99,6 +102,18 @@ describe "Authentication Pages" do
         end
 
         it {should have_content("Profile updated")}
+      end      
+    end
+
+    describe "in the Entries controller" do
+      describe "submitting to the create action" do
+        before { post entries_path }
+        specify { expect(response).to redirect_to(signin_path) }
+      end
+
+      describe "submitting to the destroy action" do
+        before { delete entry_path(FactoryGirl.create(:entry)) }
+        specify { expect(response).to redirect_to(signin_path) }
       end
     end
   end

@@ -1,0 +1,21 @@
+<% @title = "New entry" %>
+
+<h1> New entry </h1>
+
+<div class="row">
+  <div>
+  
+    <%= form_for(@entry) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 10 %>
+
+      <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

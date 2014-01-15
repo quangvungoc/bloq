@@ -28,13 +28,12 @@ def make_users
 end
 
 def make_entries
-=begin
   users = User.all(limit: 6)
-  50.times do
-    content = Faker::Lorem.sentence(10)
-    users.each { |user| user.microposts.create!(content: content)}
+  40.times do
+    title = Faker::Lorem.sentence(5)
+    body = Faker::Lorem.sentence(50)
+    users.each { |user| user.entries.create!(title: title, body: body) }
   end
-=end
 end
 
 def make_relationships

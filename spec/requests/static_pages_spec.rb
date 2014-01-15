@@ -8,6 +8,14 @@ describe "StaticPages" do
   	before {visit root_path}
 
   	it {should have_title("Bloq Home")}
+
+    describe "list entries" do
+      let(:user) {FactoryGirl.create(:user)}
+      let(:entry) {FactoryGirl.create(:entry, user: user)}
+
+      it {should have_content("Entries")}
+      it {should have_link(entry.title)}      
+    end
   end
  
   describe "help page" do

@@ -219,9 +219,9 @@ input {
   }
 }
 
-/* microposts */
+/* entry */
 
-.microposts {
+.entries {
   list-style-type: none;
   margin: 10px 0 0 0;
 
@@ -232,10 +232,24 @@ input {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px 4px 4px 4px;
     
-    margin-top: 5px;
+    margin-top: 10px;
   }
 }
+
+.title {
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 1px;
+
+  color: #0000FF;
+  margin-right: 0.4em;
+  outline: medium none;
+  overflow: hidden;
+  padding: 0;
+}
+
 .content {
+  padding-top: 8px;
   display: block;
 }
 .timestamp {

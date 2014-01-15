@@ -22,6 +22,8 @@
                   <%= link_to "Sign out", signout_path, method: "delete" %>
                 </li>
               </ul>
+              <li class="divider"></li>
+              <li><%= link_to "New entry", new_entry_path %></li>
             </li>
           <% else %>
             <li><%= link_to "Sign in", signin_path %>

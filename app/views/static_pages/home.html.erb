@@ -1,5 +1,5 @@
 <% @title = "Home" %>
-<% if false %>
+<% if false && signed_in? %>
   <div class="row">
     <aside class="span4">
       <section>
@@ -26,6 +26,15 @@
     </h2>
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+
   </div>
 <% end %>
 
+<br>
+<br>
+<br>
+
+<div>
+  <h1 style="text-align:left">Entries</h1>
+  <%= render 'shared/items' %>
+</div>

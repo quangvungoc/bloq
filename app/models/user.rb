@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   #CONSTANTS
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  # relations
+  has_many :entries, dependent: :destroy
   
   # validations
   validates :email, confirmation: true
