@@ -2,24 +2,24 @@ require 'spec_helper'
 
 describe "StaticPages" do
   
-  subject{ page }
+  subject{page}
 
   describe "home page" do
-  	before { visit root_path }
+  	before {visit root_path}
 
-  	it { should have_title("Bloq Home") }
+  	it {should have_title("Bloq Home")}
   end
  
   describe "help page" do
-  	before { visit help_path }
+  	before {visit help_path}
 
-    it { should have_title("Bloq Help") }
+    it {should have_title("Bloq Help")}
   end
 
   describe "about page" do
-    before { visit about_path }
+    before {visit about_path}
 
-    it { should have_title("Bloq About") }
+    it {should have_title("Bloq About")}
   end
 
   it "should have the right links in layout" do
