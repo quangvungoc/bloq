@@ -39,4 +39,47 @@ describe "User Pages" do
     end
   end
 
+  describe "edit user page" do
+    let(:user) {FactoryGirl.create(:user)}
+    before do
+      visit signin_path
+      sign_in user
+      visit edit_user_path(user)
+    end
+
+    describe "page" do
+      it {should have_content("Update your profile")}
+      it {should have_title("Bloq Edit user")}
+      it {should have_link("change", href: "http://gravatar.com/emails")}
+    end
+
+    describe "with invalid infos" do
+      before {click_button "Save changes"}
+
+      it {should have_content("error")}
+    end
+  end
+
+  describe "index" do
+    before do
+      sign_in FactoryGirl.create(:user)
+      FactoryGirl.create(:user, name: "Bob", 
+                                email: "bob@example.com",
+                                email_confirmation: "bob@example.com")
+      FactoryGirl.create(:user, name: "Ben", 
+                                email: "ben@example.com",
+                                email_confirmation: "ben@example.com")
+      visit users_path
+    end
+
+    it { should have_title('All users') }
+    it { should have_content('All users') }
+
+    it "should list each user" do
+      User.all.each do |user|
+        expect(page).to have_selector('li', text: user.name)
+      end
+    end
+  end
+
 end
