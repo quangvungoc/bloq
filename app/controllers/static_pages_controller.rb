@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     if signed_in? 
       @items = current_user.feed.paginate(page: params[:page])
     else
-      @items = Entry.paginate(page: params[:page])
+      @items = Entry.all.paginate(page: params[:page])
     end
   end
 
