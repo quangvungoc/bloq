@@ -267,6 +267,7 @@ input {
 .content {
   padding-top: 8px;
   display: block;
+  height: 100%;
 }
 .timestamp {
   color: $grayLight;
@@ -279,13 +280,5 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
-  }
-}
-
-.truncate {
-  max-height: 100px;
-  overflow: hidden;
-  :after{
-    content: '...';
   }
 }
