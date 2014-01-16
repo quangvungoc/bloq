@@ -1,6 +1,7 @@
 class Entry < ActiveRecord::Base
   # relations
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   # validations
   validates :body, presence: true

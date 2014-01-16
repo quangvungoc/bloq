@@ -6,6 +6,7 @@ Bloq::Application.routes.draw do
   end
   resources :sessions,  only: [:new, :create, :destroy]
   resources :entries,   only: [:new, :create, :destroy, :show]
+  resources :comments,  only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
   root 'static_pages#home'

@@ -2,3 +2,19 @@
 
 <h1><%= @entry.title %></h1>
 <p><%= @entry.body %></p>
+
+<br>
+<h3 style="text-align:left">Comments</h2>
+
+<% if signed_in? %>
+  <%= render 'shared/comment_form' %>
+<% else %>
+  <% store_location %>
+  <h2 style="text-align:left"> Please <%= link_to "sign in", signin_path %> to comment </h2>
+<% end %>
+
+<% if @items.any? %>
+  <%= render 'shared/items' %>
+<% else %>
+  <h2 style="text-align:left">No comment yet. Be the first to comment.</h3>
+<% end %>

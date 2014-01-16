@@ -8,6 +8,7 @@
       <%= link_to entry.user.name, entry.user %>
     </span>
     <%= time_ago_in_words(entry.created_at) %> ago.
+    <%= pluralize(entry.comments.count, "Comment") %>
   </span>
   
 </li>

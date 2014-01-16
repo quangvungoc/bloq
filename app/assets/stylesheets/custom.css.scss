@@ -236,6 +236,19 @@ input {
   }
 }
 
+.comments {
+  list-style-type: none;
+
+  li {
+    background-color: $grayLighter;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin-top: 7px;
+
+    padding-left: 10px;
+  }
+}
+
 .title {
   font-size: medium;
   font-weight: bold;
