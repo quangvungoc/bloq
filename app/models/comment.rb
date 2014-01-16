@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
 
   # validations
   validates :content, presence:true
+  validates :content, length: {maximum: 250}
   validates :entry_id, presence: true
   validates :user_id, presence: true
 
