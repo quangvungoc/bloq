@@ -14,8 +14,9 @@
   <h2 style="text-align:left"> Please <%= link_to "sign in", signin_path %> to comment </h2>
 <% end %>
 
+<a href="#comment"></a>
 <% if @items.any? %>
   <%= render 'shared/items' %>
 <% else %>
   <h2 style="text-align:left">No comment yet. Be the first to comment.</h3>
-<% end %>
+<% end %> 

@@ -15,7 +15,7 @@
     </span>
     <%= time_ago_in_words(entry.created_at) %> ago at
     <%= l(entry.created_at, format: :notime) %>.
-    <%= pluralize(entry.comments.count, "Comment") %>.
+    <%= link_to pluralize(entry.comments.count, "Comment"), entry_path(entry, anchor: "comment") %>.
   </span>
   <%= render 'shared/entry_delete_form', entry: entry %>
 
