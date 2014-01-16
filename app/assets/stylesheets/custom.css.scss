@@ -234,6 +234,9 @@ input {
     
     margin-top: 10px;
   }
+  a {
+    text-decoration:none;
+  }
 }
 
 .comments {
@@ -282,6 +285,7 @@ aside {
 .truncate {
   max-height: 100px;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  :after{
+    content: '...';
+  }
 }

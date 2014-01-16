@@ -1,0 +1,6 @@
+<% if @feed.any? %>
+  <ul class="<%= pluralize(2, @feed.first.class.to_s.downcase) %>">
+    <%= render @feed %>
+  </ul>
+  <%= will_paginate @feed, :param_name => 'feed_page' %>
+<% end %>

@@ -11,7 +11,7 @@
     </aside>
     <div class="span8">
       <h3>Feed</h3>
-      <%= render 'shared/items' %>
+      <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
@@ -25,12 +25,13 @@
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 
   </div>
+<% end %>
+
   <br>
   <br>
   <br>
 
   <div>
-    <h1 style="text-align:left">Entries</h1>
+    <h1 style="text-align:left">Newest entries</h1>
     <%= render 'shared/items' %>
   </div>
-<% end %>
