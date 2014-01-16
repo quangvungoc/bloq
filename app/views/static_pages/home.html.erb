@@ -1,5 +1,5 @@
 <% @title = "Home" %>
-<% if false && signed_in? %>
+<% if signed_in? %>
   <div class="row">
     <aside class="span4">
       <section>
@@ -8,12 +8,9 @@
       <section>
         <%= render 'shared/stats' %>
       </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
     </aside>
     <div class="span8">
-      <h3>Micropost Feed</h3>
+      <h3>Feed</h3>
       <%= render 'shared/items' %>
     </div>
   </div>
@@ -27,14 +24,14 @@
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 
+    <br>
+    <br>
+    <br>
+
+    <div>
+      <h1 style="text-align:left">Entries</h1>
+      <%= render 'shared/items' %>
+    </div>
+
   </div>
 <% end %>
-
-<br>
-<br>
-<br>
-
-<div>
-  <h1 style="text-align:left">Entries</h1>
-  <%= render 'shared/items' %>
-</div>

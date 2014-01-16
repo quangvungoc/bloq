@@ -2,4 +2,5 @@
   <ul class="<%= pluralize(2, @items.first.class.to_s.downcase) %>">
     <%= render @items %>
   </ul>
+  <%= will_paginate @items %>
 <% end %>

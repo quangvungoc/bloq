@@ -18,9 +18,6 @@ describe "Authentication Pages" do
 
       it {should have_title("Sign in")}
       it {should have_selector("div.alert.alert-error")}
-
-      # TODO
-      it {should have_link("New entry")}
     end
 
     describe "with valid infos" do
@@ -35,6 +32,7 @@ describe "Authentication Pages" do
       it {should have_link('Profile',       href: user_path(user))}
       it {should have_link('Sign out',      href: signout_path)}
       it {should_not have_link('Sign in',   href: signin_path)}
+      it {should have_link("New entry")}
 
       describe "then sign out" do
         before {click_link "Sign out"}

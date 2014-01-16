@@ -1,6 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
-    @items = Entry.paginate(page: params[:page])
+    if signed_in? 
+      @items = current_user.feed.paginate(page: params[:page])
+    else
+      @items = Entry.paginate(page: params[:page])
+    end
   end
 
   def help

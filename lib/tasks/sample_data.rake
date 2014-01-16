@@ -37,12 +37,10 @@ def make_entries
 end
 
 def make_relationships
-=begin
   users = User.all
   user = User.first
   followed_users  = users[2..50]
   followers       = users[3..40]
   followed_users.each { |followed| user.follow!(followed)}
   followers.each      { |follower| follower.follow!(user)}
-=end
 end

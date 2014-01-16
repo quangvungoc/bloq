@@ -1,7 +1,12 @@
 Bloq::Application.routes.draw do
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :sessions,  only: [:new, :create, :destroy]
   resources :entries,   only: [:new, :create, :destroy, :show]
+  resources :relationships, only: [:create, :destroy]
 
   root 'static_pages#home'
   match '/help',    to: 'static_pages#help',          via: 'get'
