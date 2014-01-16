@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :signed_in_user,  only: [:create, :destroy]
-  before_action :correct_user,    only: [:destroy]
+  before_action :admin_user,    only: [:destroy]
 
   def index
   end
@@ -39,5 +39,9 @@ class EntriesController < ApplicationController
   def correct_user
     @entry = current_user.entries.find_by(id: params[:id])
     redirect_to root_url if @entry.nil?
+  end
+
+  def admin_user
+    redirect_to root_url unless current_user.admin?
   end
 end

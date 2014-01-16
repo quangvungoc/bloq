@@ -1,6 +1,7 @@
 <% @title = @entry.title %>
 
 <h1><%= @entry.title %></h1>
+<h2>By <%= link_to @entry.user.name, @entry.user %></h2>
 <p><%= @entry.body %></p>
 
 <br>
