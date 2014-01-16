@@ -278,3 +278,10 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+.truncate {
+  max-height: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
