@@ -7,7 +7,8 @@
     <span class="user">
       <%= link_to entry.user.name, entry.user %>
     </span>
-    <%= time_ago_in_words(entry.created_at) %> ago.
+    <%= time_ago_in_words(entry.created_at) %> ago at
+    <%= l(entry.created_at, format: :notime) %>.
     <%= pluralize(entry.comments.count, "Comment") %>.
   </span>
   <%= render 'shared/entry_delete_form', entry: entry %>
